@@ -28,14 +28,24 @@
   <style>
     html, body { margin: 0; height: 100%; }
     iframe { width: 100%; height: 100%; border: none; }
-
-    /* Cacher l'élément Wix avec l'ID #WIX_ADS */
-    #WIX_ADS {
-      display: none !important;
-    }
   </style>
 </head>
 <body>
-  <iframe src="https://sitefalmoelectrici.wixsite.com/falmo-electricite" allowfullscreen></iframe>
+  <iframe id="iframe-wix" src="https://sitefalmoelectrici.wixsite.com/falmo-electricite" allowfullscreen></iframe>
+
+  <!-- JavaScript pour masquer le message Wix -->
+  <script>
+    window.onload = function() {
+      // Attendre que l'iframe soit complètement chargé
+      var iframe = document.getElementById('iframe-wix');
+      iframe.onload = function() {
+        // Une fois l'iframe chargé, exécuter le code pour masquer l'élément
+        var wixAdsElement = iframe.contentWindow.document.querySelector('#WIX_ADS');
+        if (wixAdsElement) {
+          wixAdsElement.style.display = 'none';
+        }
+      };
+    };
+  </script>
 </body>
 </html>
