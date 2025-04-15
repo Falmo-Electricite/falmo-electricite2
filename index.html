@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Falmo Électricité | Électricien professionnel</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png">
 
   <!-- Description SEO -->
   <meta name="description" content="Falmo Électricité vous accompagne dans vos projets d'installation, rénovation ou dépannage électrique.">
-  <link rel="stylesheet" type="text/css" href="assets/css/styles.css"> <!-- Lien vers ton fichier CSS -->
+  <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 
-  <!-- Balises Open Graph (réseaux sociaux) -->
+  <!-- Balises Open Graph -->
   <meta property="og:title" content="Falmo Électricité">
   <meta property="og:description" content="Spécialiste en travaux électriques : installation, rénovation, dépannage.">
   <meta property="og:type" content="website">
@@ -26,26 +26,35 @@
 
   <!-- Style -->
   <style>
-    html, body { margin: 0; height: 100%; }
-    iframe { width: 100%; height: 100%; border: none; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    #iframe-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #fff; /* au cas où le site met du vide autour */
+    }
+
+    iframe {
+      width: 100vw;
+      height: 100vh;
+      border: none;
+      display: block;
+    }
   </style>
 </head>
 <body>
-  <iframe id="iframe-wix" src="https://sitefalmoelectrici.wixsite.com/falmo-electricite" allowfullscreen></iframe>
-
-  <!-- JavaScript pour masquer le message Wix -->
-  <script>
-    window.onload = function() {
-      // Attendre que l'iframe soit complètement chargé
-      var iframe = document.getElementById('iframe-wix');
-      iframe.onload = function() {
-        // Une fois l'iframe chargé, exécuter le code pour masquer l'élément
-        var wixAdsElement = iframe.contentWindow.document.querySelector('#WIX_ADS');
-        if (wixAdsElement) {
-          wixAdsElement.style.display = 'none';
-        }
-      };
-    };
-  </script>
+  <div id="iframe-wrapper">
+    <iframe src="https://sitefalmoelectrici.wixsite.com/falmo-electricite" allowfullscreen></iframe>
+  </div>
 </body>
 </html>
