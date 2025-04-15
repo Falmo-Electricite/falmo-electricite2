@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Falmo Électricité | Électricien professionnel</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png">
 
   <!-- Description SEO -->
   <meta name="description" content="Falmo Électricité vous accompagne dans vos projets d'installation, rénovation ou dépannage électrique.">
+  <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 
-  <!-- Open Graph -->
+  <!-- Balises Open Graph -->
   <meta property="og:title" content="Falmo Électricité">
   <meta property="og:description" content="Spécialiste en travaux électriques : installation, rénovation, dépannage.">
   <meta property="og:type" content="website">
@@ -23,27 +24,37 @@
   <meta name="twitter:title" content="Falmo Électricité">
   <meta name="twitter:description" content="Spécialiste en électricité générale. Intervention rapide et efficace.">
 
+  <!-- Style -->
   <style>
     html, body {
       margin: 0;
       padding: 0;
-      width: 100%;
-      height: 100%;
+      width: 100vw;
+      height: 100vh;
       overflow: hidden;
-      background-color: #ffffff;
     }
 
-    iframe {
+    #iframe-wrapper {
       position: fixed;
       top: 0;
       left: 0;
       width: 100vw;
       height: 100vh;
+      overflow: hidden;
+      background-color: #fff; /* au cas où le site met du vide autour */
+    }
+
+    iframe {
+      width: 100vw;
+      height: 100vh;
       border: none;
+      display: block;
     }
   </style>
 </head>
 <body>
-  <iframe src="https://sitefalmoelectrici.wixsite.com/falmo-electricite" allowfullscreen></iframe>
+  <div id="iframe-wrapper">
+    <iframe src="https://sitefalmoelectrici.wixsite.com/falmo-electricite" allowfullscreen></iframe>
+  </div>
 </body>
 </html>
