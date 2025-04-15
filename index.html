@@ -3,58 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <title>Falmo Électricité | Électricien professionnel</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png">
-
-  <!-- Description SEO -->
   <meta name="description" content="Falmo Électricité vous accompagne dans vos projets d'installation, rénovation ou dépannage électrique.">
-  <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 
-  <!-- Balises Open Graph -->
-  <meta property="og:title" content="Falmo Électricité">
-  <meta property="og:description" content="Spécialiste en travaux électriques : installation, rénovation, dépannage.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://falmo-electricite.fr">
-  <meta property="og:image" content="https://falmo-electricite.fr/favicon.png">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Falmo Électricité">
-  <meta name="twitter:description" content="Spécialiste en électricité générale. Intervention rapide et efficace.">
-
-  <!-- Style -->
   <style>
     html, body {
       margin: 0;
       padding: 0;
-      width: 100vw;
-      height: 100vh;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
       overflow: hidden;
     }
 
-    #iframe-wrapper {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
+    .iframe-container {
+      width: 100%;
+      height: 100%;
       overflow: hidden;
-      background-color: #fff; /* au cas où le site met du vide autour */
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    iframe {
+    .zoomed-iframe {
+      transform: scale(1.1); /* Zoom à ajuster si besoin */
+      transform-origin: top center;
       width: 100vw;
       height: 100vh;
       border: none;
-      display: block;
     }
   </style>
 </head>
 <body>
-  <div id="iframe-wrapper">
-    <iframe src="https://sitefalmoelectrici.wixsite.com/falmo-electricite" allowfullscreen></iframe>
+  <div class="iframe-container">
+    <iframe class="zoomed-iframe" src="https://sitefalmoelectrici.wixsite.com/falmo-electricite" allowfullscreen></iframe>
   </div>
 </body>
 </html>
