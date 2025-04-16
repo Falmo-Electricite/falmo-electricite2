@@ -19,11 +19,12 @@
 
     /* Conteneur de l'iframe */
     .iframe-wrapper {
-      position: fixed;  /* Permet de fixer l'iframe sur toute la page */
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); /* Centrer l'iframe */
+      width: 414px; /* Largeur forcée */
+      height: 896px; /* Hauteur forcée */
       overflow: hidden;
     }
 
@@ -31,14 +32,19 @@
       width: 100%;
       height: 100%;
       border: none;
-      object-fit: cover;  /* L'iframe remplira toute la surface */
+      object-fit: cover;  /* S'assure que l'iframe remplisse l'espace sans déformation */
     }
 
-    /* Ajustement de l'iframe pour les écrans mobiles */
+    /* Ajustement pour mobile si nécessaire */
     @media (max-width: 768px) {
+      .iframe-wrapper {
+        width: 100%; /* Ajuster la taille sur mobile */
+        height: auto;
+        transform: translate(0, 0); /* Pas de décalage sur mobile */
+      }
       iframe {
-        transform: scale(0.85); /* Zoom léger sur mobile pour ajuster */
-        transform-origin: top center;  /* Centrage du zoom en haut */
+        width: 100%;
+        height: 100%;
       }
     }
   </style>
