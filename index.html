@@ -18,19 +18,22 @@
     }
 
     .iframe-wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       overflow: hidden;
     }
 
     iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       border: none;
-      object-fit: cover; /* Permet à l'iframe de remplir l'écran sans laisser de marges */
+      object-fit: cover; /* Permet à l'iframe de remplir l'écran sans déformation */
     }
 
     /* Appliquer un ajustement spécifique pour les écrans plus petits (mobile) */
