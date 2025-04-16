@@ -27,25 +27,24 @@
     }
 
     iframe {
-      width: 100vw; /* Utilise toute la largeur du viewport */
-      height: 100vh; /* Utilise toute la hauteur du viewport */
+      width: 100%;
+      height: 100%;
       border: none;
+      object-fit: cover; /* Permet à l'iframe de remplir l'écran sans laisser de marges */
     }
 
-    /* Appliquer un zoom uniquement pour les écrans plus petits (mobile) */
+    /* Appliquer un ajustement spécifique pour les écrans plus petits (mobile) */
     @media (max-width: 768px) {
       iframe {
-        transform: scale(0.75); /* Zoomer sur l'iframe */
-        transform-origin: top center; /* Le zoom se fait depuis le haut du centre */
-        width: 133.33vw; /* Ajuste la largeur pour compenser le zoom */
-        height: 133.33vh; /* Ajuste la hauteur pour compenser le zoom */
+        transform: scale(0.9); /* Réduit légèrement la taille sur mobile */
+        transform-origin: top center; /* Le zoom se fait depuis le haut au centre */
       }
     }
   </style>
 </head>
 <body>
   <div class="iframe-wrapper">
-    <!-- URL du site Wix -->
+    <!-- URL de l'iframe Wix -->
     <iframe src="https://sitefalmoelectrici.wixsite.com/falmo-electricite" allowfullscreen></iframe>
   </div>
 </body>
