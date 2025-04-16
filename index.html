@@ -2,56 +2,24 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Falmo Électricité | Électricien professionnel</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-
-  <link rel="icon" type="image/png" href="favicon.png">
-  <meta name="description" content="Falmo Électricité vous accompagne dans vos projets d'installation, rénovation ou dépannage électrique.">
-
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      background-color: #fff;
-      overflow: hidden;
-    }
-
-    .iframe-wrapper {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-    }
-
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      object-fit: cover;
-    }
-
-    /* Forcer la taille de l'iframe à 1080x1920 pour les téléphones */
-    @media (max-width: 768px) {
-      .iframe-wrapper {
-        width: 1080px; /* Fixer la largeur à 1080px */
-        height: 1920px; /* Fixer la hauteur à 1920px */
-        margin: 0 auto; /* Centrer l'iframe */
-      }
-
-      iframe {
-        width: 100%;
-        height: 100%;
-        transform: none; /* Pas de zoom supplémentaire */
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirection vers la version appropriée</title>
+  <script>
+    // Fonction pour détecter l'appareil (mobile ou PC)
+    function redirectBasedOnDevice() {
+      // Si l'écran est plus petit ou égal à 768px (mobile)
+      if (window.innerWidth <= 768) {
+        window.location.href = 'index-mobile.html'; // Redirige vers la version mobile
+      } else {
+        window.location.href = 'index-pc.html'; // Redirige vers la version PC
       }
     }
-  </style>
+
+    // Exécuter la redirection lors du chargement de la page
+    window.onload = redirectBasedOnDevice;
+  </script>
 </head>
 <body>
-  <div class="iframe-wrapper">
-    <iframe src="https://sitefalmoelectrici.wixsite.com/falmo-electricite" allowfullscreen></iframe>
-  </div>
+  <p>Redirection en cours...</p>
 </body>
 </html>
