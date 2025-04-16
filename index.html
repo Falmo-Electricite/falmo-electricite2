@@ -13,29 +13,29 @@
       margin: 0;
       padding: 0;
       height: 100%;
-      overflow: hidden;
       background-color: #fff;
+      overflow: hidden;
     }
 
     .iframe-wrapper {
-      width: 100%;
-      height: 100%;
       display: flex;
       justify-content: center;
       align-items: start;
+      width: 100%;
+      height: 100%;
       overflow: hidden;
     }
 
     iframe {
-      width: 100vw;
-      height: 100vh;
+      width: 1280px;
+      height: 1000px;
       border: none;
     }
 
-    /* ✅ Zoom uniquement sur mobile */
-    @media screen and (max-width: 768px) {
+    /* ✅ Mobile uniquement : zoom et recentrage */
+    @media (max-width: 768px) {
       iframe {
-        transform: scale(1.2); /* Ajuste le zoom ici */
+        transform: scale(0.75);
         transform-origin: top center;
       }
     }
