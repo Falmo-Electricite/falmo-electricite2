@@ -31,20 +31,32 @@
       height: 100vh; /* Utilise toute la hauteur du viewport */
       border: none;
     }
-
-    /* Ajuster la taille de l'iframe pour les petits écrans */
-    @media (max-width: 768px) {
-      iframe {
-        width: 100%; /* Remet l'iframe à 100% de la largeur de l'écran sur mobile */
-        height: auto; /* Ajuste la hauteur automatiquement pour garder les proportions */
-      }
-    }
   </style>
 </head>
 <body>
   <div class="iframe-wrapper">
-    <!-- Utiliser l'URL de ton site Wix (pas besoin de version mobile spécifique) -->
-    <iframe src="https://sitefalmoelectrici.wixsite.com/falmo-electricite" allowfullscreen></iframe>
+    <!-- L'iframe initialement vide -->
+    <iframe id="myIframe" allowfullscreen></iframe>
   </div>
+
+  <script>
+    var iframe = document.getElementById("myIframe");
+
+    // Si l'écran est plus petit que 768px, charger la version mobile
+    if (window.innerWidth <= 768) {
+      iframe.src = "https://sitefalmoelectrici.wixsite.com/falmo-electricite"; // URL de la version mobile si elle existe
+    } else {
+      iframe.src = "https://sitefalmoelectrici.wixsite.com/falmo-electricite"; // URL de la version desktop
+    }
+
+    // Recharger l'iframe si la taille de la fenêtre change
+    window.onresize = function() {
+      if (window.innerWidth <= 768) {
+        iframe.src = "https://sitefalmoelectrici.wixsite.com/falmo-electricite"; // version mobile
+      } else {
+        iframe.src = "https://sitefalmoelectrici.wixsite.com/falmo-electricite"; // version desktop
+      }
+    };
+  </script>
 </body>
 </html>
