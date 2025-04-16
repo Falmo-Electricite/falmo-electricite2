@@ -2,24 +2,27 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Falmo Électricité | Version mobile</title>
-  <link rel="icon" href="favicon.png" type="image/png">
+  <title>Falmo Électricité | Électricien professionnel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta name="description" content="Falmo Électricité vous accompagne dans vos projets d'installation, rénovation ou dépannage électrique.">
+
   <style>
-    /* Code CSS spécifique à la version mobile */
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
       background-color: #fff;
+      overflow: hidden;
     }
 
     .iframe-wrapper {
-      width: 100%;
-      height: 100%;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: start;
+      width: 100%;
+      height: 100%;
       overflow: hidden;
     }
 
@@ -27,25 +30,18 @@
       width: 100%;
       height: 100%;
       border: none;
-      object-fit: cover;
+      transform-origin: top center;
     }
 
-    /* Zoom ou mise à l'échelle pour mobile */
+    /* Ajustement pour mobile uniquement : */
     @media (max-width: 768px) {
       iframe {
-        transform: scale(0.85); /* Appliquer un zoom pour mobile si nécessaire */
-        transform-origin: center; /* Centrer le zoom */
-      }
-
-      /* Adapter l'encoche de l'iPhone (safe area) */
-      body {
-        padding-top: env(safe-area-inset-top); /* Appliquer un padding pour l'encoche */
+        transform: scale(1.2); /* Augmente le zoom pour combler les bords blancs */
       }
     }
   </style>
 </head>
 <body>
-
   <div class="iframe-wrapper">
     <iframe src="https://sitefalmoelectrici.wixsite.com/falmo-electricite" allowfullscreen></iframe>
   </div>
