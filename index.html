@@ -20,11 +20,10 @@
     /* Conteneur de l'iframe */
     .iframe-wrapper {
       position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%); /* Centrer l'iframe */
-      width: 414px; /* Largeur forcée */
-      height: 896px; /* Hauteur forcée */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       overflow: hidden;
     }
 
@@ -32,19 +31,27 @@
       width: 100%;
       height: 100%;
       border: none;
-      object-fit: cover;  /* S'assure que l'iframe remplisse l'espace sans déformation */
+      object-fit: cover;
     }
 
-    /* Ajustement pour mobile si nécessaire */
+    /* Ajustement pour mobile uniquement */
     @media (max-width: 768px) {
       .iframe-wrapper {
-        width: 100%; /* Ajuster la taille sur mobile */
-        height: auto;
-        transform: translate(0, 0); /* Pas de décalage sur mobile */
+        width: 100%; /* Prendre toute la largeur */
+        height: 100%; /* Prendre toute la hauteur */
+        transform: none; /* Pas de zoom global */
       }
+
       iframe {
-        width: 100%;
-        height: 100%;
+        transform: scale(0.85); /* Zoom uniquement sur mobile */
+        transform-origin: top center;
+      }
+    }
+
+    /* Ajustement pour les écrans plus grands (PC) */
+    @media (min-width: 769px) {
+      iframe {
+        transform: none; /* Pas de zoom sur PC */
       }
     }
   </style>
@@ -53,5 +60,30 @@
   <div class="iframe-wrapper">
     <iframe src="https://sitefalmoelectrici.wixsite.com/falmo-electricite" allowfullscreen></iframe>
   </div>
+
+  <script>
+    // Fonction pour détecter un écran mobile
+    function isMobile() {
+      return window.innerWidth <= 768; // La largeur typique pour mobile/tablette
+    }
+
+    // Ajuster l'iframe au redimensionnement de l'écran
+    window.addEventListener('resize', function() {
+      if (isMobile()) {
+        // Appliquer le zoom uniquement sur mobile
+        document.querySelector('iframe').style.transform = 'scale(0.85)';
+      } else {
+        // Sur PC, pas de zoom
+        document.querySelector('iframe').style.transform = 'none';
+      }
+    });
+
+    // Initialiser dès le chargement de la page
+    if (isMobile()) {
+      document.querySelector('iframe').style.transform = 'scale(0.85)';
+    } else {
+      document.querySelector('iframe').style.transform = 'none';
+    }
+  </script>
 </body>
 </html>
