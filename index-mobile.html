@@ -24,10 +24,8 @@
       align-items: start;
       width: 100%;
       min-height: 100vh;
-      padding-top: 40px;   /* ✅ zone tampon en haut */
-      padding-bottom: 60px; /* ✅ zone tampon en bas */
-      overflow-x: hidden;
-      overflow-y: auto;
+      padding-top: 40px;    /* Espace scrollable en haut */
+      padding-bottom: 60px; /* Espace scrollable en bas */
       box-sizing: border-box;
     }
 
@@ -36,6 +34,7 @@
       height: 896px;
       border: none;
       transform-origin: top center;
+      margin-top: -40px; /* ✅ Annule visuellement le padding-top */
     }
 
     @media (max-width: 768px) {
