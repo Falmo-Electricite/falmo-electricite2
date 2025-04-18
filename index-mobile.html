@@ -14,7 +14,7 @@
       padding: 0;
       height: 100%;
       background-color: #fff;
-      overflow: hidden;
+      overflow: auto; /* ✅ pour permettre le scroll si le contenu dépasse */
     }
 
     .iframe-wrapper {
@@ -23,20 +23,19 @@
       align-items: start;
       width: 100%;
       height: 100%;
-      overflow: hidden;
+      overflow: auto; /* ✅ scroll interne activé */
     }
 
     iframe {
-      width: 100%;
-      height: 100%;
+      width: 414px; /* résolution mobile standard */
+      height: 896px;
       border: none;
       transform-origin: top center;
     }
 
-    /* Ajustement pour mobile uniquement : */
     @media (max-width: 768px) {
       iframe {
-        transform: scale(1.2); /* Augmente le zoom pour combler les bords blancs */
+        transform: scale(1.2); /* zoom sans couper */
       }
     }
   </style>
